@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+ 
+<struts>
+	 <constant name="struts.objectFactory" value="spring" />
+   	<package name="studentview" extends="struts-portlet-default" namespace="/user">
+   		<action name="index">
+			<result>/html/user/view.jsp</result>
+		</action>
+		<action name="adduser" class="com.meera.struts2.action.NavigateAction" method="navigateToAddStudentJsp">
+	     	<result name="adduser">/html/user/adduser.jsp</result>
+	   	</action>
+	   	 <action name="adduserrecord" class="com.meera.struts2.action.AddUserAction" method="execute">
+	     	<result name="success">/html/user/adduser.jsp</result>
+	     	<result name="error">/html/user/error.jsp</result>
+	   	</action>
+	</package>
+</struts>
